@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>String</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+            <li><a href="String.html">String</a></li>
+            <li><a href="Stream.html">Stream</a></li>
+            <li><a href="Optional.html">Optional</a></li>
+            <li><a href="Strategia.html">Strategia</a></li>      
+            <li><a href="Exceptions.html">Exceptions</a></li>
+            <li><a href="Enum.html">Enum</a></li>
+            <li><a href="Data_czas.html">Data i Czas</a></li>
+            <li><a href="Abstract.html">Abstrakacja/Interface</a></li>
+      
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Enter Block content here...</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		     	  <div class ="links">
+		  <p>Przydatne linki:</p>
+		  <a href = "https://javastart.pl/baza-wiedzy/klasy/string-stringbuffer-i-stringbuilder">String Javastart</a><br> 
+		  </div>
+        <h2>Klasa String</h2>
+        <hr>
+ 	  <h4><b>Co i dlaczego wyświetli się w konsoli po uruchomieniu poniższego programu?</b></h4>
+		  
+     class TextModification {<br>
+         public static void main(String[] args) {<br>
+             String original = "Hello";<br>
+             duplicateText(original);<br>
+             System.out.println(original);<br>
+        }<br><br>
+		  
+		    private static String duplicateText(String source) {<br>
+            source = source + source;<br>
+             return source;<br>
+         }<br>
+     }<br>
+		
+<p>prawidłowa odpowiedź to "Hello", czyli wywołanie metody <b>duplicateText()</b> nie ma żadnego wpływu na literał przypisany do zmiennej original.
+Obiekty w Javie przekazywane są do metod poprzez kopie referencji.</p>
+		  
+<p>Należy pamiętać, że obiekty typu String są <b>niemodyfikowalne (immutable)</b>, a tym samym w pamięci powstaje nowy obiekt "HelloHello".
+Na obiekt ten będzie wskazywała jednak tylko referencja source, referencja original wskazuje nadal na ten sam obiekt, na który wskazywała wcześniej.</p><br>
+		  
+		<h4><b>Ile obiektów typu String powstanie po uruchomieniu poniższego kodu?</b></h4>  
+		  
+     String x = new String("Hello");<br>
+     String y = x;<br>
+     String z = "Hello";<br>
+
+	<p>Powstanie dwa obiekty! W Pierwszej linii i tyle. Jeden z konstruktora drugi z literału i on zostanie zapisany do String pool
+	Pozostałe wskazują na niego.</p>
+
+		  
+		  
+		  
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

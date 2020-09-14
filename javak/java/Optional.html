@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OPTIONAL</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>OPTIONAL</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+            <li><a href="String.html">String</a></li>
+            <li><a href="Stream.html">Stream</a></li>
+            <li><a href="Optional.html">Optional</a></li>
+            <li><a href="Strategia.html">Strategia</a></li>      
+            <li><a href="Exceptions.html">Exceptions</a></li>
+            <li><a href="Enum.html">Enum</a></li>
+            <li><a href="Data_czas.html">Data i Czas</a></li>
+            <li><a href="Abstract.html">Abstrakacja/Interface</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Enter Block content here...</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		     	  <div class ="links">
+		  <p>Przydatne linki:</p>
+		  <a href = "http://devfoundry.pl/optional-java-pl/">devfoundry</a><br> 
+					  <a href="https://blogs.oracle.com/javamagazine/12-recipes-for-using-the-optional-class-as-its-meant-to-be-used">optional oracle 12</a>
+
+		  </div>
+        <h2>Optional</h2>
+        <hr>
+
+<h4>Zadanie Optional</h4>
+
+Stwórz klasę Song która zawiera dwa pola :<br>
+String title;<br>
+Int length;<br><br>
+
+Następnie stwórz metodę która:<br>
+<ol>
+    <li> Przyjmuje obiekt Opakowuje w Optional i jeżeli nie jest pusty to go zwraca(Song) a jeżeli jest pusty to zwraca nowy domyślny obiekt (new Song()).</li>
+    <li> Przyjmuje obiekt Opakowuje w Optional i jeżeli nie nie jest pusty to zmieni tytuł na duże litery i zwróci ten obiekt(Song). A jeżeli jest pusty to zwróci domyślny.</li>
+   <li>  Przyjmuje Obiekt opakowuje w Optional i jeżeli nie jest pusty to zwraca z  tytuł(String) zamieni na duże litery i zwróci ten tytuł. A jeżeli jest pusty to zwróci domyślny. Czyli metoda przyjmuje obiekt i zwraca pole tego obiektu.</li>
+   <li>  Przyjmuje obiekt Opakowuje w Optional i jeżeli nie jest pusty to zwraca  długość piosenki (int) albo wartość 0 jeżeli obiekt jest pusty. Czyli metoda przymuje obiket i wyciąga prymitywa.</li>
+   <li> Przyjmuje Obiekt Opakowuje w Optional i jeżeli nie jest pusty to zwraca(boolean) true jeśli długośc piosenki jest dłuzsza niż 2 minuty. A jezezeli obiekt jest pusty to zwraca false.</li>
+   <li> Przyjmuje Liste Obiektów za pomocą strumienia Opakowuje  w Optional i zwraca sume długości (int) wszystkich piosenek w kolekcji. A jeżeli obiekt jest pusty to zwraca 0.</li>
+   <li>  Przyjmuje Listę Obiektów za pomocą strumienia Opakowuje w Optional i jeżeli nie jest pusty transformuje tzn zmienia nazwe na duze litery i zwraca liste obiektów tego samego typu. (List&#60;Song&#62;) A jeżeli jest pusty to zwraca domyślny obiekt.</li>
+   <li> Przyjmuje Listę obiektów, za pomocą strumienia Opakowuje w Optional i jeżeli nie jest pusty to filtruje po d;ugości 120 sek i zwraca liste obiketów tego samego typu(List&#60;Song&#62;) a jeżeli jest pusty to zwraca domyślny obiekt. </li>
+   <li>  Przyjmuje obiekt i drukuje tutył a jeżeli pusty to rzuca wyjątek RuntimeException. Użyj ifPresentOrElse</li>
+   <li>  Przyjmuje Obiekt Opakowuje w Optional i jeżeli nie jest pusty to ustawia seterem title na XXX a następnie zwraca ten tutył a jeżeli jest pusty to zwraca napis „Pusty”.</li>
+</ol>
+			  Nie da sie w jednym Optionalu czegos ustawic seterm i jednoczesnie zwrócic dlatego optonal jest wyodrębiony do zmiennej i na niej są wykonane dwie operacje najpierw set a potem map i or else;
+Albo po prostu zwrócić oryginalny obiekt który po drodze się zmieni;
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REST API</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>REST API</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+             <li><a href="java/java.html">JAVA</a></li>
+            <li><a href="git.html">GIT</a></li>
+            <li><a href="spring.html">SPRING</a></li>
+            <li><a href="rest.html">REST</a></li>
+            <li><a href="rest-api-test.html">REST API TEST</a></li>
+            <li><a href="graphql.html">GRAPHQL</a></li>
+            <li><a href="spock-mockito.html">SPOCK/MOCKITO</a></li>
+            <li><a href="kafka.html">KAFKA</a></li>
+            <li><a href="docker.html">DOCKER</a></li>
+            <li><a href="docker-compose.html">DOCKER-COMPOSE</a></li>
+            <li><a href="kubernetes.html">KUBERNETES</a></li>
+			<li><a href="microservice.html">MICROSERVICE</a></li> 
+            <li><a href="swagger.html">SWAGGER</a></li>
+			<li><a href="jenkins.html">JENKINS</a></li>
+			<li><a href="dependency.html">ZALEŻNOŚCI</a></li>
+			<li><a href="useful.html">PRZYDATNE ADNOTACJE</a></li> 
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+     <p>Przykład projektu:</p>
+			<p><b>spring-rest-notes</b></p>
+			<p>restful_conference_room</p>
+			<p>api-docker</p>
+			<a href = "https://start.spring.io/">Spring Boot Initializer</a><br>		  
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		  	  <div class ="links">
+		  <p>Przydatne linki:</p>
+		  <a href = "https://bykowski.pl/obsluga-wyjatkow-w-rest-api-jak-zrobic-to-elegancko-w-spring-boot/">Obsługa wyjatków</a><br> 
+			<a href="https://bykowski.pl/spring-boot-integracja-z-rest-api-na-przykladzie-resttemplate/">Rest Client</a><br>
+				  <a href="https://sztukakodu.pl/jak-definiowac-kody-http-odpowiedzi-w-springu/">resposneEntity</a> 
+				  <a href="https://github.com/public-apis/public-apis">public api</a>
+				  <a href="http://websystique.com/spring-boot/spring-boot-rest-api-example/">API example</a><br>
+				  <a href="https://codecouple.pl/2017/07/07/rest-architecture-best-practises/">Best Practise</a>	
+		  </div>
+         <img src="images/rest.png" width="300" height="150">
+        <hr>
+ <p>Rest w Springu bazuje na Spring MVC. Rest operuje na danych, wykonuje metody CRUD poprzez żądania HTTP. <br>
+W spring starter wystarczy samo WEB.</p><br>
+		  
+<p>Do pobierania parametrów można wykorzystać adnotacje:</p><br>
+
+<p><b>@PathVariable</b> - kiedy pobieramy parametr z adresu URL.</p>
+
+<p><b>@RequestParam</b> -  obsługa dodatkowych parametrów  np.( /cities?orderBy=name)</p>
+
+<p><b>@RequestBody</b>  - pobieramy parametr z ciała zapytania. Np. obiekt do zapisu JSON.</p>  <br>
+		  
+		  
+		  <h3>Budowanie API</h3>
+		
+		  Aplikacja powinna definiować jakie kody HTTP powinny być zwrócone z poszczególnych metod.<br>
+		  Każda z metod powinna zwracać kod odpowiadający statusowi żądania.<nr>
+		  Jeśli nie są zdefiniowane to zwrócą 200 - o ile nie dojdzie do pojawienia się jakiegoś wyjątku w trakcie żądania<br>
+		  Z pomocą przychodzi klasa <b>ResponseEntity.</b><br><br>
+		  
+		  Metody mogą zwracać Obiekt obudowany w ResponseEntity lub zwykłą Encję.<br><br>
+		  
+		 Przykłady:<br><br>
+		  
+		 <b>@POST</b><br>	
+	     <script src="https://pastebin.com/embed_js/LAt443Xc"></script><br>
+
+		  	 <b>@GET</b><br>	
+	     <script src="https://pastebin.com/embed_js/2GF4tMxB"></script><br>
+
+		  <b>@GET ALL</b><br>	
+		  <script src="https://pastebin.com/embed_js/Dahr2Gpy"></script><br>
+  
+		  	 <b>@PUT</b><br>	
+	    <script src="https://pastebin.com/embed_js/Ub1MwYP7"></script><br>
+		  
+		  	 <b>@DELETE</b><br>	
+	     <script src="https://pastebin.com/embed_js/eZKkuKi8"></script><br>
+
+		  
+		  <h3>Obsługa wyjatków</h3>
+		  
+		  
+@ControllerAdvice<br>
+public class CountryNotFoundAdvice {<br><br>
+   &nbsp&nbsp @ResponseBody<br>
+   &nbsp&nbsp@ExceptionHandler(CountryNotFounException.class)<br>
+   &nbsp&nbsp@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Nie znaleziono kraju o podanej nazwie")<br>
+   &nbsp&nbsp public String <b>countryNotFoundHandler</b>(CountryNotFounException e) {<br>
+       &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp System.out.println(e.getMessage());<br>
+        &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp return e.getMessage();<br>
+   &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp }<br>
+}<br><br>
+
+		  
+	 public class <b>CountryNotFounException</b> extends RuntimeException {<br>
+    &nbsp&nbsp&nbsp&nbsp public CountryNotFounException(String message) {<br>
+    &nbsp&nbsp&nbsp&nbspsuper("country not found " + message);<br>
+   &nbsp&nbsp&nbsp&nbsp}<br>
+ &nbsp&nbsp}<br><br>
+		  
+	  <h3>REST API a Client REST</h3>
+		  
+		  <p>API służy do udostępniania zasobów, dzieki API można zasoby pobierać, aktualizować, tworzyć czy usuwać</p>
+		  <p>Client REST służy do komunikacji z API</p>
+		  <p>Normalnie aby skorzystać z API wystarczy użyć przeglądarki albo postmana</p>
+		  <p>Natomiast aby stworzyć aplikację w Javie która łączy się z API (REST Client) należy skorzystać np z <b>RestTemplate</b>
+		  które łączy się z API.</p><br>
+		  
+
+    @GetMapping("/gui")<br>
+    public Country[] countries() {<br>
+    &nbsp&nbsp ResponseEntity<Country[]> exchange = restTemplate.exchange("http://app:8081/api/country/all", HttpMethod.GET, HttpEntity.EMPTY,Country[].class);<br>
+    &nbsp&nbsp return exchange.getBody();<br>
+    }<br>
+		  
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

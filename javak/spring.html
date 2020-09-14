@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SPRING</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>SPRING</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+             <li><a href="java/java.html">JAVA</a></li>
+            <li><a href="git.html">GIT</a></li>
+            <li><a href="spring.html">SPRING</a></li>
+            <li><a href="rest.html">REST</a></li>
+            <li><a href="rest-api-test.html">REST API TEST</a></li>
+            <li><a href="graphql.html">GRAPHQL</a></li>
+            <li><a href="spock.html">SPOCK</a></li>
+            <li><a href="kafka.html">KAFKA</a></li>
+            <li><a href="docker.html">DOCKER</a></li>
+            <li><a href="docker-compose.html">DOCKER-COMPOSE</a></li>
+            <li><a href="kubernetes.html">KUBERNETES</a></li>
+			<li><a href="microservice.html">MICROSERVICE</a></li> 
+			<li><a href="hystrix.html">HYSTRIX</a></li> 
+            <li><a href="swagger.html">SWAGGER</a></li>
+			<li><a href="jenkins.html">JENKINS</a></li>
+			<li><a href="dependency.html">ZALEŻNOŚCI</a></li>
+			<li><a href="useful.html">PRZYDATNE ADNOTACJE</a></li> 
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Enter Block content here...</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+      <img src="images/spring.png" width="300" height="150">
+        <hr>
+    
+		  <p>Wstrzykiwaniem zależności nazywamy możliwość wstrzykiwania dowolnej implementacji np. do pola klasy poprzez konstruktor bądź setter.</p>
+		  
+<p><b>@Configuration</b> – Podstawowa adnotacja w Springu. Klasa tak oznaczona zostanie wykorzystana do utworzenia beanów w kodzie. Źródło definicji beanów</p>
+<p><b> @Component </b>– Służy do oznaczania komponentów Springa. Komponent jest to klasa na podstawie której Spring tworzy obiekt bez 
+konieczności definiowania ich w klasie konfiguracji za pomocą <b>@Bean</b>. Oznaczamy konkretne klasy a nie interfejsy.</p>
+<p><b> @ComponentScan</b> -  Służy do wskazania Springowi klas lub pakietów które należy przeskanować w poszukiwaniu Komponentów.</p>
+<p> <b>@Autowired</b> – Służy do automatycznego wstrzykiwania. Wstrzykiwanie przez: pole klasy, konstruktor, setter.</p>
+<p> <b>@Qualifier(„simple”) </b> – Służy do rozróżniania komponentów</p><br>
+		 
+		  <h4><b>Spring Boot + Hibernate/Jpa (springBootJpa07-2019)</b></h4>
+		  
+<p>Zasadnicza różnica pomiędzy zwykłym Hibernate a springowym jest taka że plik hibernate.cfg.xml jest zapisany w klasie Java.
+	Należy też zdefiniować Bean EntityManager.</p> 
+
+<p>Korzystając natomiast ze Spring Boot cała konfiguracja zawarta jest w pliku application.properties”, nie musimy też definiować ziaren,
+	możemy od razu wstrzykiwać obiekt EntityManagera (jako pole a nie jako konstruktor!) poprzez adnotacje @PersistenceContext i @Transactional. 
+	Spring steruje za nas zarządzaniem transakcjami i zamykaniem EntityManagera.</p>
+
+<p>Albo trzecie podejście – całkowicie rezygnujemy z EntityManagera i wykonujemy operacje CRUD na interfejsie JpaRepository<Movie,Long> Ale to już jest Spring Data. </p>
+
+<p><b>Spring Boo</b>t działa tak. że wykorzystuje mechanizm skanowania classpath i na podstawie wykrywania poszczególnych klas konfiguruje domyślne komponenty.. To co daje nam to w praktyce, to fakt, że np. gdy mamy w classpath projektu sterownik MySql, Spring Boot skonfiguruje dla nas źródło danych i obiekty wymagane przez JPA. Stworzony po to m.in. aby wyeliminować boiler plate czyli kod który nic nie wnosi do logiki a musi się pojawić żeby aplikacja działała.
+Adnotacja @SpringBootApplication zastępuje trzy inne - @Configuration, @EnableAutoConfiguration i @ComponentScan.
+	Klasę startową warto więc umieścić w pakiecie nadrzędnym nad wszystkimi pozostałymi, dzięki temu wszystkie komponenty i klasy konfiguracji zostaną automatycznie odnalezione!</p>
+
+<p>SpringBoot domyślnie wykorzystuje Mavena do jako system budowania ale nie wykorzystuje zwykłych zależności.
+Zamiast tego w większości przypadków korzysta z tzw. starterów. Startery to zależności Springa grupujące większą ilość bibliotek w całość, jest 
+to dzięki wykorzystywanemu mechanizmowi zależności przechodnich.</p>
+
+<p>Istnieją dodatkowe startery dla JPA, Security, integracji, czy testów.</p>
+
+<p>Budując projekt z wykorzystaniem SpringBoot najłatwiej jest skorzystać ze <b>Spring Initializer</b>. Jest to Aplikacja Webowa która generuje strukturę projektu. </p>
+
+<p>Można korzystać z SessionFactory, należy wtedy użyć metody unwrap() na obiekcie EntityManagera.</p>
+
+<p>Cykl życia obiektu Encji: (Zarządzany (Managed) , Odłączony(Detached), Usunięty)</p>
+    <p>1. Obiekt przechodzi w stan zarządzany po wywołaniu metody persist().</p>
+   <p>2.Obiekt przechodzi w stan odłączony po wywołaniu metody commit(), rollback() albo po zamknięciu entityManagera czyli automatycznie jeśli korzystamy z @Transactional.
+	   Aby ponownie wprowadzić go w stan zarządzany należy wywołać metodę merge().</p>
+		  <p>Obiekt przechodzi w stan usunięty po wywołaniu metody remove()</p><br>
+		  
+		  <h4><b>Relacje JPA</b></h4>
+		  
+		  <p><b>@OneToOne</b></p><br>
+		  
+<p>Właścicielem relacji jest tabela która zawiera klucz obcy – czyli klucz główny z drugiej tabeli.
+W relacji jednokierunkowej ustawiamy adnotację <b>@OneToOne</b> tylko przy właścicielu relacji!
+Relacja dwukierunkowa – z jednego obiektu mamy dostęp do drugiego i odwrotnie.</p>
+
+<p>W encji, która będzie właścicielem relacji, należy dodać adnotację @JoinColumn, która pozwala zdefiniować nazwę kolumny z kluczem obcym, która powstanie w celu połączenia obu tabel.
+Sami decydujemy w której tabeli Hibernate wygeneruje klucz obcy, zazwyczaj jest to właściciel relacji.</p>
+<p><b>mappedBy</b> – wskazanie nazwy pola klasy, które w klasie właściciela jest referencją do wskazanej encji.</p><br>
+
+Właściciel relacji - @OneToOne , @JoinColumn(name=”xxx”),cascade.persist
+Druga strona - @OneToOne,mappedBy(name=”xxx”);<br><br>
+		  
+		    <p><b>@OneToMany</b></p><br>
+		  
+<p>Właściciel relacji - @ ManyToOne , @JoinColumn(name=”xxx”),cascade, pole - orders</p>
+<p>Druga strona - @OneToMany, mappedBy(name=”xxx”), casacde, fetch , List<> - client</p>
+
+<p>Przy relacji dwukierunkowej po stronie z kolekcją wystarczy dodać adnotację @OneToMany z parametrem mappedBy wskazując nazwę pola encji,
+	z którą relację definiujemy. Robimy to dlatego, że to encja Order jest właścicielem relacji (tabela client_orders
+	posiada kolumnę wskazującą na odpowiedni rekord z tabeli clients).</p>
+
+<p>Największym problemem jest błąd „detached entity past to persist” pojawia się np. kiedy chcemy do nowoutworzonego
+	obiektu przypisac(setter) obiekt znajdujący się już w bazie.(Np. do nowego zamówienia dodajemy klienta
+	który już istnieje w bazie) Najłatwiej temu zapobiec wywołując metodę merge().
+	Natomiast jeśli nie korzystamy z EntityMenagera należy stworzyć metodę która pobiera obiekt, 
+	ustawia (setter) i zapisuje w bazie nowy obiekt. Całą metodę należy oznaczyć <b>@Transactional</b> </p>
+		  
+
+<p>Aby uruchomić skrypt data.sql należy dodac wpis w pliku application.properties:</p>
+<p>spring.datasource.initialization-mode=always</p>
+<p>spring.datasource.sqlScriptEncoding=UTF-8</p><br>
+	
+	      <p><b>@ManyToMany</b></p><br>
+		  
+<p>W relacji ManyToMany potrzebna jest dodatkowa tabela, bo nie da się w jednej kolumnie przechowywać kilku kluczy, poza tym dochodziło by do redundancji.
+Sami musimy określić pomiędzy jakimi tabelami zostanie wygenerowana dodatkowa tabela ustawiając adnotacje @ManyToMany pomiędzy takimi tabelami.</p>
+
+<p>We Właścicielu relacji możemy zdefiniować dodatkową tabelę poprzez adnotację @JoinTable</p>
+
+<p>Nie ustawiamy pól seterem tylko musimy stworzyć specjalne metody które pętlą dodają elementy do encji. (dodawanie zamówień do klienta i viceversa)</p>
+
+<p>Właściciel relacji - @ManyToOne , @JoinColumn(name=”xxx”),cascade = Persist, @ManyToMany,@JoinTable</p>
+<p>Druga strona - @OneToMany, mappedBy(name=”xxx”),List,</p>
+<p>Trzecia strona - @MantToMany,mappedBy,List</p>
+
+<p>Relacje ManyToMany można przedstawić definicjąc własną tabelę łączącą tak jak robił to Zelent.i określić relacje jako OneToMany.</p><br>
+	
+		<h4><b>Spring Data</b></h4> 
+		  
+<p>Spring Data to jeden z najbardziej użytecznych projektów w całym ekosystemie Springa. 
+Pozwala z łatwy sposób tworzyć zapytania do bazy danych. Cała sygnatura metody jest zapytaniem do bazy.
+ Rozszerzając interfejs JpaRepository mamy dostęp do wielu gotowych metod CRUD.</p> 
+
+<p>Aby określić relacje należy zwrócić uwagę czy tabela zawiera klucz obcy z innej tabeli, jeśli tak to pomiędzy tymi tabelami istnieje jakaś relacja. 
+Pomiędzy Klasami Klient-Ksiązka nie ma żadnej relacji! Tak samo jak w zadaniu wyżej nie ma relacji pomiędzy Client-Product. 
+Dopiero Tabela Zamowienia jest tabelą łączącą. W zadaniu wyżej Hibernate generował tabele sam(@JoinTable)
+tutaj sami definiujemy tabele i określamy relacje OneToMany</p>
+
+<p>W Spring Data definiujemy interfejs określający Repozytorium np: 
+Interface KlienciRepository extends JpaRepository<Klienci,Long>
+Nie musimy definiować tutaj żadnej klasy implementującej ten interfejs i tworzenia metod CRUD. 
+Spring sam przy uruchamianiu aplikacji wygeneruje sobie samodzielnie implementację interfejsu ze wszystkimi metodami, które są zdefiniowane w CrudRepository</p><br>
+		  
+		  	<h4><b>Spring Security</b></h4>  
+		  
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

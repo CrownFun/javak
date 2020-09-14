@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SPOCK/MOCKITO</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>SPOCK/MOCKITO</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+             <li><a href="java/java.html">JAVA</a></li>
+            <li><a href="git.html">GIT</a></li>
+            <li><a href="spring.html">SPRING</a></li>
+            <li><a href="rest.html">REST</a></li>
+            <li><a href="rest-api-test.html">REST API TEST</a></li>
+            <li><a href="graphql.html">GRAPHQL</a></li>
+            <li><a href="spock-mockito.html">SPOCK/MOCKITO</a></li>
+            <li><a href="kafka.html">KAFKA</a></li>
+            <li><a href="docker.html">DOCKER</a></li>
+            <li><a href="docker-compose.html">DOCKER-COMPOSE</a></li>
+            <li><a href="kubernetes.html">KUBERNETES</a></li>
+			<li><a href="microservice.html">MICROSERVICE</a></li> 
+            <li><a href="swagger.html">SWAGGER</a></li>
+			<li><a href="jenkins.html">JENKINS</a></li>
+			<li><a href="dependency.html">ZALEŻNOŚCI</a></li>
+			<li><a href="useful.html">PRZYDATNE ADNOTACJE</a></li> 
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+     <p>Przykład projektu:</p>
+			<p><b>mock-test</b></p>
+	  
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		    <div class ="links">
+		  <p>Przydatne linki:</p>
+		  <a href = "https://bykowski.pl/mockito-wprowadzenie-i-przyklady/">Mockito - bykowski</a><br> 
+		 
+		  </div>
+         <img src="images/mockito.jpeg" width="220" height="100">
+        <hr>
+<p><b>Mockito</b> jest biblioteką udostępniającą API do tworzenia mokowalnych obiektów w Javie. Obiekt mokowany to nic innego niż atrapa implementacja danego obiektu.
+	Programista definiuje, co dany obiekt ma robić, bez samodzielnego powoływanie jego instancji wraz z uzupełnianiem wszystkich właściwości.</p>
+		  <p>Aby w pełni korzystać z jej dobrodziejstw trzeba do projektu dołączyć również bibliotekę <b>JUnit</b>.</p><br>
+		  <p>Aby skorzystać Mockito klasę testu należy opatrzyć adnotacją <b>@RunWith(MockitoJUnitRunner.class)</b>.</p>
+		  <p>Najważniejsze adnotacje:</p>
+		  <ul>
+		  <li><b>@Mock</b> – wstrzykiwanie obiektu, który będzie mockowany;</li>
+		   <li><b>@Before</b> – wykonywane przed rozpoczęciem KAŻDORAZOWO wewnątrz klasy testu;</li>
+		   <li><b>@Test</b> – logika testu;</li>
+		   <li><b>@After</b> – wywoływane po KAŻDORAZOWYM zakończeniu testu np. w celu posprzątania obiektu itp.</li>
+		  </ul> <br> 
+			  
+		  <p>Zdarza się tak, że obiekt który chcemy zmockować wymaga innego obiektu do przekazania.</p>
+		  <p>@Mock tworzy makiety. <b>@InjectMocks</b> tworzy instancję klasy i wstrzykuje do niej klasy opatrzone adnotacją @Mock.</p>
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

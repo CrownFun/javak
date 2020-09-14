@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>STRATEGIA</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>STRATEGIA</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+
+    
+	<div class="navigation">
+      <ul>
+     <li><a href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+            <li><a href="String.html">String</a></li>
+            <li><a href="Stream.html">Stream</a></li>
+            <li><a href="Optional.html">Optional</a></li>
+            <li><a href="Strategia.html">Strategia</a></li>      
+            <li><a href="Exceptions.html">Exceptions</a></li>
+            <li><a href="Enum.html">Enum</a></li>
+            <li><a href="Data_czas.html">Data i Czas</a></li>
+            <li><a href="Abstract.html">Abstrakacja/Interface</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Enter Block content here...</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		     	  <div class ="links">
+		  <p>Przydatne linki:</p>
+
+		  </div>
+        <h2>STRATEGIA</h2>
+        <hr>
+<b>Wzorzec Strategia.</b><br>
+		  
+Mechanizm wyboru algorytmu<br>
+Jeden z najczęściej używanych wzorców, Zgodny z zasada Open-Close dzięki czemu możemy dodać kod nie zmienajac dotychczasowego. <br>
+Wzorzec ma zastoswanie kiedy możemy rozwiazac problem na różne sposoby,<br>
+jest kilka różnych algorytmów rozwiązujących pewien problem i mamy możliwość wybory algorytmu.<br>
+1.Najpierw należy stworzyć wspólny interfejs. <br>
+2.Każdy sposób rozwiązania problemu(algorytm) trafia do klasy implementującej interfejs. <br>
+3.Utworzyć klasę kontekstu -  umożliwia wybór strategii. Klasa taka zawiera pole typu interfejsowego, <br>
+seter albo konstruktor który jako parametr przyjmuje interfejs! oraz właściwą metodę.<br>
+4.Klasa klienta – tutaj tworzymy obiekt Kontekstu i wywołujemy właściwą strategie.<br><br>
+		  
+Zmodyfikuj poniższy kod tak aby wykorzystywał wzorzec Strategia.<br>
+public class Calculator {<br>
+    public int calculate(int a, int b, String operator) {<br>
+        int result = 0;<br>
+        if ("add".equals(operator)) {<br>
+            result = a + b;<br>
+        } else if ("multiply".equals(operator)) {<br>
+            result = a * b;<br>
+        } else if ("divide".equals(operator)) {<br>
+            result = a / b;<br>
+        } else if ("subtract".equals(operator)) {<br>
+            result = a - b;<br>
+        }<br>
+        return result;<br>
+    }<br>
+}<br>
+		  
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

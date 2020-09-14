@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EXCEPTIONS</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>EXCEPTIONS</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+
+    
+	<div class="navigation">
+      <ul>
+       <li><a href="file:///home/coi.local/gfilewicz/Pulpit/private/javapedia/index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+            <li><a href="String.html">String</a></li>
+            <li><a href="Stream.html">Stream</a></li>
+            <li><a href="Optional.html">Optional</a></li>
+            <li><a href="Strategia.html">Strategia</a></li>      
+            <li><a href="Exceptions.html">Exceptions</a></li>
+            <li><a href="Enum.html">Enum</a></li>
+            <li><a href="Data_czas.html">Data i Czas</a></li>
+            <li><a href="Abstract.html">Abstrakacja/Interface</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Enter Block content here...</p>
+          <br>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+Aenean commodo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+ Aenean commodo</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+      <div class="common_content">
+		     	  <div class ="links">
+		  <p>Przydatne linki:</p>
+
+		  </div>
+        <h2>ENUM</h2>
+        <hr>
+   <p><b>NUMBER ADDER</b></p>
+Poniższy program ma za zadanie wczytać od użytkownika dowolną ilość liczb nieujemnych, a następnie je zsumować. <br>
+		  Sumowanie następuje po podaniu pierwszej liczby ujemnej.<br>
+		 
+		  public class NumberAdder {<br>
+    public static void main(String[] args) {<br>
+        List<Double> numbers = readNumbersFromUser();<br>
+        printSum(numbers);<br>
+    }<br>
+<br>
+    private static List<Double> readNumbersFromUser() {<br>
+        List<Double> numbers = new ArrayList<>();<br>
+        Scanner input = new Scanner(System.in);<br>
+        double number = 0;<br>
+        do {<br>
+            System.out.println("Podaj liczbę (liczba ujemna kończy wprowadzanie):");<br>
+            number = input.nextDouble();<br>
+            if(number >= 0) {<br>
+                numbers.add(number);<br>
+            }<br>
+        } while(number >= 0);<br>
+        return numbers;<br>
+    }<br>
+<br>
+    private static void printSum(List<Double> numbers) {<br>
+        StringBuilder builder = new StringBuilder();<br>
+        double sum = 0;<br>
+        for (int i = 0; i < numbers.size(); i++) {<br>
+            builder.append(numbers.get(i));<br>
+            sum += numbers.get(i);<br>
+            if(i < (numbers.size()-1))<br>
+                builder.append(" + ");<br>
+        }<br>
+        builder.append(" = ");<br>
+        builder.append(sum);<br>
+        System.out.println(builder.toString());<br>
+    }<br>
+}<br>
+	     <h4><b>AUTOMAT DO GIER (javastart- obsługa błędów)</b></h4>
+		  
+<p>Tworzymy aplikację do automatu, w którym można kupić gry komputerowe. Automat przechowuje kilka najnowszych tytułów. 
+	Każda gra opisana jest za pomocą nazwy i ceny.</p>
+<p>Działanie automatu jest następujące:</p>
+<p>użytkownik wpisuje na ekranie nazwę gry, którą chce wypożyczyć</p>
+<p>użytkownik wrzuca do do automatu pieniądze (zakładamy pełne złotówki, bez groszy)</p>
+<p>Użytkownik powinien zobaczyć w odpowiedzi, że grę udało się kupić lub, że dana gra nie została odnaleziona.
+Dodatkowo jeśli użytkownik wrzucił zbyt mało pieniędzy powinien zobaczyć komunikat o zbyt małej kwocie, a jeśli wpłacił zbyt dużo pieniędzy,
+to powinien otrzymać resztę.</p>
+<p>Program napisz definiując klasy:</p>
+<p><b>Game</b> - pojedyncza gra,</p>
+<p><b>GameMachine</b> - przechowuje kilka gier i pozwala je kupić. W sytuacji, gdy użytkownik próbuje zakupić grę,
+której nie ma w automacie lub wpłacił zbyt mało pieniędzy rzuć w metodzie obsługującej zakup odpowiednie wyjątki zdefiniowane przez siebie,</p>
+<p><b>GameMachineController</b> - klasa interakcji z użytkownikiem, jest to jedyne miejsce w programie, 
+	gdzie powinno być wyświetlanie oraz wczytywanie danych od użytkownika.</p>
+<p>Stwórz wyjątki GameNotFoundException oraz NotEnoughMoneyException </p> 
+        </div>
+      
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

@@ -1,0 +1,22 @@
+ @EventListener(ApplicationReadyEvent.class)
+ 
+ @Value("${example}")
+ private String Example
+ 
+ @RestController
+ @RequestMapping("/api/movies");
+ 
+ @Enumerated(EnumType.STRING)
+
+@GetMapping("/{title}")
+public Movie getMovieByName(@PathVariable("title") String title) {
+
+
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
+	this.mockMvc.perform(get("/"))
+				.andDo(print())
+				.andExpect(status().isOk());

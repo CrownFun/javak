@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MICROSERVICE</title>
+<meta name="description" content="A description of your website">
+<meta name="keywords" content="keyword1, keyword2, keyword3">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="wrapper"> 
+
+  <div id="header"> 
+
+    <div class="top_banner">
+      <h1>MICROSERVICE</h1>
+    </div>
+ 
+  </div>
+
+  <div id="page_content">
+  
+<!--Template designed by--><a href="http://www.htmltemplates.net"><img src="images/copyright.gif" class="copyright" alt="http://www.htmltemplates.net"></a>
+    
+	<div class="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="left_side_bar"> 
+
+      <div class="col_1">
+        <h1>Main Menu</h1>
+        <div class="box">
+         <ul>
+             <li><a href="java/java.html">JAVA</a></li>
+            <li><a href="git.html">GIT</a></li>
+            <li><a href="spring.html">SPRING</a></li>
+            <li><a href="rest.html">REST</a></li>
+            <li><a href="rest-api-test.html">REST API TEST</a></li>
+            <li><a href="graphql.html">GRAPHQL</a></li>
+            <li><a href="spock-mockito.html">SPOCK/MOCKITO</a></li>
+            <li><a href="kafka.html">KAFKA</a></li>
+            <li><a href="docker.html">DOCKER</a></li>
+            <li><a href="docker-compose.html">DOCKER-COMPOSE</a></li>
+            <li><a href="kubernetes.html">KUBERNETES</a></li>
+			<li><a href="microservice.html">MICROSERVICE</a></li> 
+            <li><a href="swagger.html">SWAGGER</a></li>
+			<li><a href="jenkins.html">JENKINS</a></li>
+			<li><a href="dependency.html">ZALEŻNOŚCI</a></li>
+			<li><a href="useful.html">PRZYDATNE ADNOTACJE</a></li> 
+          </ul>
+        </div>
+      </div>
+      
+      <div class="col_1">
+        <h1>Block</h1>
+        <div class="box">
+          <p>Tips:</p>
+			<p>Intellij: Edit Run Configurations --> + Compound </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right_section">
+    <div class="common_content">
+		  	     	  <div class ="links">
+		  <p>Przydatne linki:</p>
+<a href="https://www.youtube.com/watch?v=y8IQb4ofjDo&list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas">Java Brains level 1</a><br>
+<a href="https://www.youtube.com/watch?v=o8RO38KbWvA&list=PLqq-6Pq4lTTbXZY_elyGv7IkKrfkSrX5e">Java Brains level 2</a><br>
+<a href = "https://www.youtube.com/watch?v=ImKvgCMJ_ro">bykowski</a><br>
+						  <a href = "https://codecouple.pl/?s=eureka&submit=Search">Eureka Zuul PL</a><br>
+	<a href = "https://dzone.com/articles/making-your-microservices-resilient-and-fault-tole-1">fault tolerance resilience</a>
+	</div>
+          <img src="images/micro.png" width="300" height="180">
+        <hr>
+		  <p>Architektura mikroserwisów</p>
+		
+		<p><b>Architektura Mikroserwisów</b> - Podzielenie tworzonej aplikacji na wiele modułów -  aplikacja powstaje na skutek tworzenia
+			wiele mniejszych aplikacji(niezależnych, luźno powiązanych) składających się na całość.</p>
+		<p><b>Mikroserwis</b> - Najczęściej usługa webowa (ale niekoniecznie) z którą łączymy się protokołem HTTP. Luźno powiązana, 
+			samowsytarczalna, łatwo testowala usługa rozwiązująca jeden problem biznesowy. Mikroserwis powinien być jak najmniejszy i odpowiedzialny za jedną rzecz
+		np. wyszukiwanie, reset hasła, weryfikacja adresu e-mail.</p>
+	<p>Każdy z mikroserwisów może być napisany w innym jezyku/technologii i różnej wersji. W <b>monolicie</b> 
+		cała aplikacja jeest napisana w jezdnym języku i jednej wersji</p>
+		<p>Mikroserwisy stosuje się w dużych projektach, w małych jest nieopłacalny</p>
+		<p>Mikroserwis jest bardziej odporny na awarię</p>
+		
+		<p>Microservice = <b>SOA</b> + <b>DDD</b></p>
+		<p><b>SOA (Servce-Oriented Architecture)</b>- Architektura zorientowana na usługi polega na aplikacji w taki sposób,
+		by można było z niej korzystać jako z zestawu usług, opublikowanych tak, by poziom szczegółowości był dostosowany do potrzeb konsumenta usługi.</p>
+			<p><b>DDD (Doamin-driven design)</b> - Podejście do tworzenia oprogramowania kładące nacisk na takie definiowanie obiektów i komponentów systemu oraz ich zachowań,
+				aby wiernie odzwierciedlały rzeczywistość. Dopiero po utworzeniu takiego modelu należy rozważyć zagadnienia związane z techniczną realizacją.</p><br>
+		 <p><b>Zalety mikroserwisów:</b></p>
+		<ul>
+		<li>Odporoność na awarie</li>
+			<li>Łatwość wprowadzania zmian</li>
+			<li>Czytelność</li>
+			<li>Możliwość mieszania techonologii</li>
+		</ul>
+		
+		
+		<hr>
+		
+		<img src="images/microservice.jpg" width="600" height="400">	
+		
+		<p><b>Service Discovery (Eureka)</b> -  steruje usługami mikroserwisu.W najprostszych słowach jest to serwis, który umożliwia rejestrowanie się nowych serwisów, jak i udostępnianie informacji o
+		zarejestrowanych użytkownikach. <a href="https://geek.justjoin.it/mikroserwisowa-architektura-na-przykladzie-spring-cloud-netflix/">(link)</a> <br>
+			Warstwa abstrakcji zawierająca informację o każdym z Serwisów
+		m.in to gdzie jest zaimplemnetowana, za co odpowiada oraz czy ma awarie lub jest nadmiernie obciążona. Najpopularniejszą biblioteką jest <b>Eureka</b>
+		ze stajni <b>Netflix</b></p>
+		<p><b>Load Balancer</b> - pozwala na równoważenie obciążenia, jeśli jeden Serwis jest obciążany to to Load Balancer przekierowuje na inny mniej obciążony</p>
+		<p><b>Ribbon</b> - Load Balancer po stronie klienta. W praktyce oznacza to, że ilość aktywnych instancji zwracana jest przez Service Discovery np. Eureka.
+			Następnie wybór która usługa zwrócona przez Service Discovery zostanie wywołana, leży po stronie klienta. <a href="https://javaleader.pl/2019/07/07/spring-cloud-ribbon/">(link)</a></p>
+		<p><b>API Gateway (Zuul Gateway) <a href="https://www.youtube.com/watch?v=1vjOv_f9L8I"> link</a></b> Jest punktem wejściowym naszej aplikacji, który przekierowuje żądania do odpowiednich serwisów w naszym środowisku.
+			Podsumowując eksponuje publiczne API. <br>Odpowiada za to aby skierować użytkownika do odpowiedniej usługi (serwisu), 
+			Jedyna część aplikacji która rozmawia bezpośrednio
+	z użytkownikiem. Najpopularniejszą biblioteką jest <b>Zuul </b><a href="https://codecouple.pl/2018/03/16/31-spring-boot-zuul-api-gateway/">(link)</a></p> <br>
+		<p>Aby dodać <b>Eureka Server</b> należy: </p><br>
+		
+		<p>Dodać poniższe zależności:</p><br>
+		
+	<script src="https://pastebin.com/embed_js/5ivsMP1w"></script>
+		<br>
+		<ul>
+		<li>Dodać zależność <b>spring-cloud-starter-netflix-eureka-server</b></li>
+		<li>Dodać zależność <b>spring-cloud-starter-netflix-eureka-client</b></li>
+		<li>Dodać annotation in main class <b>@EnableEurekaServer</b></li>
+		<li>Dodać annotation in main class <b>@EnableEurekaClient</b></li>
+		<li>eureka.client.fetch-registry=false</li>
+		<li>eureka.client.register-with-eureka=false</li>
+		<li>eureka.server.enableSelfPreservation=true</li>
+        <li>eureka.server.renewalPercentThreshold=0.33</li>
+		<li>server.port=8761</li>
+		<li>Do Bean'a <b>RestTemplate</b> należy dodać adnotacje <b>@LoadBalanced</b> <a href="https://www.youtube.com/watch?v=GxLjcOE35oA">link</a></li>
+		<li>prezjść pod adres <a href="http://localhost:8761/"><b>localhost:8761</b></a></li>
+		<li><a href="https://dzone.com/articles/microservices-in-spring-eureka">example</a></li>
+		</ul>	
+	
+		<p>Jeśli wszystko pójdzie ok to powinniśmy zoobaczyć <b>Dashboard</b> z podpiętymi Serwisami jak na obrazku ponieżej:
+			(Może wymagać ponownego uruchomienia wszytskich serwisów):</p><br>
+		
+		<img src="images/eureka.png" width="650" height="500"> 
+		
+		<p>Adresy endpointów na które wykonujemy zapytania możemy zmodyfikowac zastepując adres <b>localhost:8086</b> na nazwę serwisu pod którą dany serwis
+			jest zarejestrowany np:</p>
+		<p>"http://heroes-service/api/heroes/"</p>
+		
+        </div>
+      	 <hr>
+		<h4><b>Fault tolerance i Resilience</b></h4>
+		
+		<p>The Fault Tolerant means the ability of an architecture to survive (tolerate) when an environment misbehaves by taking corrective actions, e.g, 
+			surviving a server crash or preventing a misbehaving API from bringing down the whole system, etc. 
+			The Fault Resilience is probably the capacity to recover from these type of scenarios quickly.</p><br>
+		<p><b>Fault tolerance:</b> User does not see any impact except for some delay during which failover occurs.</p>
+		<p><b> Fault resilience: </b> Failure is observed.But rest of system continues to function normally.</p><br>
+		
+		<p>Mikroserwis nie działa - należy utworzyć dodtakwą instancje tego serwisu</p>
+		<p>Mikroserwis jest wolny - (zbyt dużo watków jest utworzonych - thread poll jest zapchany) - należy zastosowac timeout w RestTemplate</p><br>
+		
+		<p><b>Circuit Breaker</b> - mechanizm zarządzania awariami usług-  Najpopularniejszą biblioteką jest 
+		<b>Hystrix</b> od Netflix.</p><br>
+			
+		<p>Może zdarzyć się, iż usługa nie działa poprawnie, lub jest niedostępna. Wtedy “opakowujemy” naszą logikę odpowiedzialną za odpytywanie innych usług,
+			jako komendę <b>Hystrix’ową.</b> W przypadku wystąpienia błędu, wywoływana jest metoda (ang. fallback method) odpowiedzialna za obsługę zdarzenia krytycznego.
+			Jeśli dalej będziemy odpytywać niedziałającą lub wolno działającą usługę, na pewno jej to nie pomoże.
+			Nasze kolejne odpytywania mogą jeszcze bardziej zwolnić usługę. <b>Hystrix</b> zapobiega takim praktykom.
+			W momencie, gdy biblioteka widzi, iż usługa nie odpowiada lub działa niepoprawnie zostaje wtedy włączony bezpiecznik <b>(ang. circuit breaker)</b>.
+			Po włączeniu bezpiecznika automatycznie zwracana jest wartość metody fallback. Dzięki temu, 
+			usługa zewnętrzna ma czas na restart lub realizację zadań, co umożliwi jej ponowne poprawne działanie.
+			Wyłączenie bezpiecznika następuję wtedy, gdy usługa, którą odpytujemy działa już poprawnie. </p><br>
+		
+		<p>Bardzo ważnym aspektem związanym z pracą biblioteki <b>Hystrix</b> jest poznanie wartości domyślnych. Domyślny timeout dla commendy to jedna sekunda. 
+			Hystrix zbiera także statystki z ostatnich dziesięciu sekund w przesuwnym oknie czasowym. Na podstawie tych statystyk podejmowana jest decyzja
+			czy włączyć bezpiecznik. Aby bezpiecznik się włączył (przejście w stan <b>OPEN</b>) w danym oknie czasowym musi być spełnionych kilka warunków:</p><br>
+<ul>
+   <li>minimum 50 %  żądań zakończonych niepowodzeniem</li>
+    <li>tych żądań musi być minimum 20</li>
+</ul>
+<p>Po włączeniu bezpiecznika wywoływana jest metoda fallback, jednakże nie trwa to w nieskończoność. Po okołu 5 sekundach nasz bezpiecznik przechodzi w stan <b>HALF-OPEN</b>,
+co oznacza, że jedno z żądań klienta zostanie wysłane to usługi. Jeśli działa ona poprawnie, nasz bezpiecznik się wyłącza (przechodzi w stan <b>CLOSED</b>).</p><br>
+			<p><b>Hystrix Dodajemy do aplikacji Client a nie do API!</b></p><br>
+		<script src="https://pastebin.com/embed_js/tBNezX4p"></script>
+		<p>Dodanie Hystix do Aplikacji Spring Boot:</p><br>
+	<ul>
+		<li>Dodajemy zależności: Hystrix, Dashboard,Actuator - "Dostarcza podstawowe metryki oraz informacje na temat aplikacji." <a href="https://www.devglan.com/spring-boot/spring-boot-actuator-tutorial-guide/">ACTUATOR</a></li>	
+		<li>Dodajemy adnotacje <b>@EnableCircuitBreaker</b> do klasy głównej</li>
+		<li>Dodajemy <b>@EnableHystrixDashboard</b>  do klasy głównej</li>
+		<li>application.properties - management.endpoints.web.exposure.include=hystrix.stream</li>
+		<li>Dodajmy adnotacje <b>@HystixCommand</b> to methods that need circuit breakers</li>
+		<li>Implementujemy metodę zastepczą (fallback method)</li>
+		<li>Przejść na stronę localhost:xxxx/hystrix</li>
+	</ul>
+		<p>Jeśli wszytsko pójdzie ok to powinniśmy zobaczyć strone <b>Hystrix Dashboard</b><a href="http://www.masterspringboot.com/cloud/netflix/configuring-hystrix-dashboard-in-your-spring-boot-application"> link</a></p>
+		<p>Znajduje się tam pole w którym należy wskazać źródło dla którego ma być stworzony dashboard,
+			wprowadzmy adres: <b>http://localhost:8080/actuator/hystrix.stream</b> i klikamy <b>Monitor Stream.</b></p>
+		<p>Powinien ukazać się wykres i statystyki. Teraz najelpiej uruchomić testy i obserwować wyniki.</p><br>
+		
+		<p><b>W skrócie - To co robi Hystrix to uruchamia metode zastepczą (fallback) w sytuacji gdy metoda główna nie odpowiada. </b><a href="https://codecouple.pl/2017/11/24/23-spring-boot-hystrix/">link</a></p><br>
+		
+		<hr>
+		<h3>Spring Cloud</h3>
+		
+		<p><b>Spring Cloud</b> to projekt, który zrzesza pod wspólną nazwą dziesiątki różnych bibliotek i frameworków używanych 
+			w celu tworzenia aplikacji. tj: <b>Ribbon, Eureka, Hystrix, Feign, Zuul</b> i inne.</p><br>
+		
+		<p>Jak sprytnie zarządzać konfiguracją kilkudziesięciu mikroserwisów, z których każdy może być uruchomiony w tym samym czasie w wielu instancjach?
+		Z pomocą przychodzi <b>Spring Cloud Config</b> - jest to serwer, który pomaga zarządzać konfiguracją mikroserwisów. </p><br>
+		
+		<p>Zamiast tworzyć oddzielny plik konfiguracyjny dla kazdego mikroserwisu zawierający tę samą implementację wystaczy utworzyć oddzielny serwis 
+		(projekt) który będzie zawierał plik konfiguracyjny dostępny dla wszytskich serwisów i umieszczenie go np. na <b>GitHub.</b></p>
+		
+    </div>
+
+    <div class="clear"></div>
+    
+    <!--start footer from here-->
+    <div id="footer">Copyright &copy; 2014. Design by <a href="http://www.htmltemplates.net" target="_blank">htmltemplates.net</a><br>
+    
+    </div>
+	
+  </div>
+
+</div>
+
+</body></html>

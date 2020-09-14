@@ -1,0 +1,100 @@
+ @EventListener(ApplicationReadyEvent.class)
+ 
+ @Value("${example}")
+ private String Example
+ 
+ @RestController
+ @RequestMapping("/api/movies");
+ 
+ @Enumerated(EnumType.STRING)
+
+@GetMapping("/{title}")
+public Movie getMovieByName(@PathVariable("title") String title) {
+
+
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
+	this.mockMvc.perform(get("/"))
+				.andDo(print())
+				.andExpect(status().isOk());
+
+
+version: "3.4"
+services:
+  app:
+    build: ./api-docker
+    ports:
+      - "8081:8081"
+  client:
+    build: ./api-docker/client-docker
+    ports:
+      - "8082:8082"
+    depends_on:
+      - app
+
+
+
+ @PostMapping
+    public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
+        log.info("Creating Movie : {}", movie);
+        if (movieService.isMovieExists(movie)) {
+            log.info("Failed - movie already exists!!");
+            throw new MovieConflictException(movie.getTitle());
+        }
+        return Optional.ofNullable(movieService.saveMovie(movie))
+                .map(movie1 -> new ResponseEntity<>(movie1, HttpStatus.CREATED))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build());
+    }
+
+
+   @GetMapping("/{title}")
+    public ResponseEntity<Movie> findMovie(@PathVariable String title) {
+        log.info("Fetching User with title {}", title);
+        return Optional.ofNullable(movieService.getMovie(title))
+                .map(movie1 -> new ResponseEntity<>(movie1, HttpStatus.OK))
+                .orElseThrow(() -> new MovieNotFoundException(title));
+    }
+
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Movie>> getAllMovies() {
+        List<Movie> allMovies = movieService.getAllMovies();
+        //  MultipartFile
+        if (allMovies.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(allMovies, HttpStatus.OK);
+    }
+
+
+   @PutMapping("/{id}")
+    public ResponseEntity<Movie> updateMovie(@RequestBody Movie newMovie, @PathVariable long id) {
+        log.info("Updating Movie with id {}", id);
+        Optional<Movie> movieById = movieService.findMovieById(id);
+        return movieById
+                .map(element -> {
+                    element.setTitle(newMovie.getTitle());
+                    element.setDirector(newMovie.getDirector());
+                    element.setYear(newMovie.getYear());
+                    element.setRate(newMovie.getRate());
+                    Movie movie = movieService.saveMovie(element);
+                    return new ResponseEntity<>(movie, HttpStatus.OK);
+                })
+                .orElseThrow(MovieNotFoundException::new);
+    }
+
+   @DeleteMapping("/{title}")
+    public ResponseEntity<ResponseInfo> deleteMovie(@PathVariable String title) {
+        log.info("Fetching & Deleting Movie with title {}", title);
+        if (movieService.getMovie(title) == null) {
+            log.error("Unable to delete. Movie with title {} not found.", title);
+            throw new MovieNotFoundException(title);
+        }
+        movieService.deleteMovie(title);
+        return new ResponseEntity<>(new ResponseInfo("Pomyslenie usunieto film: " + title), HttpStatus.OK);
+    }
+
+

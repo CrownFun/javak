@@ -1,0 +1,54 @@
+    
+		try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testowa?useUnicode=yes&characterEncoding=UTF-8", "root", "");
+            System.out.println("Nawiązano połaczenie");
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Nie udało się nawiązać połączenia");
+            e.printStackTrace();
+        }
+		
+		
+	 private static void createTable() throws SQLException {
+        try {
+            Statement stm = conn.createStatement();
+            stm.executeUpdate(CREATE);
+            System.out.println("Stworzono tabelę !");
+        } catch (SQLException e) {
+            System.out.println("Nie udało się stworzyc tabeli");
+            e.printStackTrace();
+        }
+    }	
+		
+	private static void insertData() {
+        try {
+            PreparedStatement prepStm = conn.prepareStatement(Insert);
+            prepStm.setString(1, "Piękny Umysł");
+            prepStm.setInt(2, 2001);
+            prepStm.setString(3, "Ron Howard");
+            prepStm.setString(4, "Biograficzny");
+            prepStm.executeUpdate();
+            System.out.println("Wstawiono dane do tabeli");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Nie udało się wstawić danych do tabeli");
+        }
+    }
+	
+	  private static void select() throws SQLException {
+        try {
+            PreparedStatement stm = conn.prepareStatement(select);
+            stm.setString(1, "Piękny Umysł");
+            ResultSet result = stm.executeQuery();
+            while (result.next()) {
+                System.out.println(result.getInt("id"));
+                System.out.println(result.getString("tytul"));
+                System.out.println(result.getInt("rok"));
+                System.out.println(result.getString("rezyser"));
+                System.out.println(result.getString("gatunek"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Nie pobrano danych");
+        }
+    }
