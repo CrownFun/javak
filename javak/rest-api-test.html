@@ -76,11 +76,16 @@
 					  <a href="https://bykowski.pl/spring-boot-26-testy-dla-zwracanych-obiektow-z-api/">mock_mvc bykowski</a>
 		  </div>
       <img src="images/rest_assured.png" width="130" height="130">
-        <hr>
+       
+		<hr> 
 		  <p>Do testowania REST API można wykorzystać m.in :</p><br>
-		  <p>Rest Assured</p>
-		  <p>MockMvc</p>
-		  <p>TestRestTemplate</p><br><br>
+		  <ul>
+		  <li>Rest Assured</li>
+		  <li>MockMvc</li>
+		  <li>TestRestTemplate</li><br>
+		  </ul>
+		  <hr> 
+		  <h3>REST ASSURED</h3>
 		  <p><b>Rest Assured</b> służy do testowania REST API. Podbnie jak <b>TestRestTemplate</b> używa się do tworzenia testów automatyczych.</p><br>
 
 		
@@ -92,14 +97,26 @@
 			Czyli jesli chcemy przetestowacć za pomoca Rest Assured API które dopiero stowrzylismy to musimy napisać odzielna aplikacje albo moduł 
 			  i uruchomić testy po uruchominiu projektu. Jeżeli natomiast chcemy  przetestowac controllery to mozemu uzyć <b>MockMvc.</b></p><br>
 		  
-			  <b>MockMvc:</b><br>
+		<hr> 
+		  <h3>MockMvc</h3>
 		  <ul>
 			<li>służy do testów jednostokowych.</li> 
 		    <li>testuje bardziej controllery i logikę którą wykonują</li>
 			<li>testuje tylko „własne” API. Nie potrzebuje uruchomionego serwera.</li>
-		  </ul>
-			 
-	
+		  </ul><br>
+		
+		  
+<p>import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;<br>
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;<br>
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;<br><br>
+
+	this.mockMvc.perform(get("/"))<br>
+				.andDo(print())<br>
+				.andExpect(status().isOk());</p><br>
+		  
+		  <p>Konieczna jest adnotacja <b>@AutoConfigureMockMvc</b></p><br>
+		  
+	<script src="https://pastebin.com/embed_js/uwDTnad0"></script>
         </div>
       
     </div>

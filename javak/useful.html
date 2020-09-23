@@ -72,20 +72,28 @@
         <hr>
         <p> @EventListener(ApplicationReadyEvent.class)<br><br></p>
 		  <p> ListCastle castles = Collections.singletonList(
-                new Castle("Twierdza", " Opis"));</p>
+                new Castle("Twierdza", " Opis"));</p><br>
  
- @Value("${example: default value}") 
+ @Value("${example: default value}") <br>
  private String Example<br><br>
+		  
+		
 		  
 			@Value może wczytywac zarówno z <b>application.properties</b> albo z <b>application.yaml</b>
 		  <a href="https://www.youtube.com/watch?v=NFQDqEhx2e0&list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB&index=5"> (example)</a><br><br>
-	
+	  <p>Wczytwanie konfiguracji w klasie <b>@ConfigurationProperties</b><a href="https://www.youtube.com/watch?v=z8kfFbfGGME&list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB&index=6">link</a><p><br>
 		  <hr>
 		  
 		  <h4>Profile</h4>
-		  
+		   <a href="https://www.youtube.com/watch?v=P91tqdWUHE4&list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB&index=8">java brains</a><br>
+		  <a href="https://bykowski.pl/spring-boot-24-budowanie-profili/">bykowski</a><br>
+		  <a href="https://codecouple.pl/2016/06/18/3-spring-boot-application-properties-profile/">coudeCouple</a><br><br>
 		  <p>Tworzenie plików profilowych odbywa się poprzez dodanie pliku:</p>
-		   <p><b>application-{profil}.properties</b></p>
+		   <p><b>application-{profil}.properties</b></p><br>
+		  <p>Przykład:</p>
+		  <p>application-test.properties</p>
+		  <p>application-test.yml</p>
+		  <br>
  			<p>Z poziomu <b>Intellij</b> uruchamiamy  aplikację ustawiając interesujący nas profil:</p>
 		  <p>-Dspring.profiles.active=development</p>
 		  <p>Aplikacja zostanie uruchomiona na ustawieniach określonych w application.properties danego profilu dodatkową zostaną uruchiomione 

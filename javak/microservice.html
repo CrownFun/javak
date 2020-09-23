@@ -74,7 +74,8 @@
 <a href="https://www.youtube.com/watch?v=o8RO38KbWvA&list=PLqq-6Pq4lTTbXZY_elyGv7IkKrfkSrX5e">Java Brains level 2</a><br>
 <a href = "https://www.youtube.com/watch?v=ImKvgCMJ_ro">bykowski</a><br>
 						  <a href = "https://codecouple.pl/?s=eureka&submit=Search">Eureka Zuul PL</a><br>
-	<a href = "https://dzone.com/articles/making-your-microservices-resilient-and-fault-tole-1">fault tolerance resilience</a>
+	<a href = "https://dzone.com/articles/making-your-microservices-resilient-and-fault-tole-1">fault tolerance resilience</a><br>
+						  <a href="https://www.youtube.com/watch?v=upoIwn4rWCo&list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB">Configuration</a>
 	</div>
           <img src="images/micro.png" width="300" height="180">
         <hr>
@@ -152,6 +153,27 @@
 		
         </div>
       	 <hr>
+			<h4><b>API GATEWAY (ZUUL)</b></h4>
+		<p>Aby dodać <b>Zuul</b> należy utworzyć nowy serwis oraz: </p>
+		<p>Dodać poniższe zależności:</p><br>
+		
+	<script src="https://pastebin.com/embed_js/4Zu0t95L"></script>
+		<br>
+		<ul>
+		<li>Dodać annotation in main class <b>@EnableZuulProxy</b></li>
+		<li>Dodać annotation in main class <b>@EnableEurekaClient</b></li>
+		</ul>
+		
+		<p>Dodac wpis do pliku konfiguracyjnego:(przykład)<p>
+		<script src="https://pastebin.com/embed_js/v3rkgFFJ"></script><br>
+		
+		<p>Usunąć <b>@RequestMapping</b> z kontrolerów.</p>
+		<p>Od tej chwili będziemy mieć <b>jeden serwer (port) na który będziemy wysyłać zapytania</b> np:</p>
+		 <p>http://localhost:<b>8089</b>/api/castle/all</p>
+		   <p> http://localhost:<b>8089</b>/api/weapon/all</p>
+			<p>http://localhost:<b>8089</b>/api/creature/all</p>
+		
+		<hr>
 		<h4><b>Fault tolerance i Resilience</b></h4>
 		
 		<p>The Fault Tolerant means the ability of an architecture to survive (tolerate) when an environment misbehaves by taking corrective actions, e.g, 
@@ -210,11 +232,29 @@ co oznacza, że jedno z żądań klienta zostanie wysłane to usługi. Jeśli dz
 			w celu tworzenia aplikacji. tj: <b>Ribbon, Eureka, Hystrix, Feign, Zuul</b> i inne.</p><br>
 		
 		<p>Jak sprytnie zarządzać konfiguracją kilkudziesięciu mikroserwisów, z których każdy może być uruchomiony w tym samym czasie w wielu instancjach?
-		Z pomocą przychodzi <b>Spring Cloud Config</b> - jest to serwer, który pomaga zarządzać konfiguracją mikroserwisów. </p><br>
+		Z pomocą przychodzi <b>Spring Cloud Config</b> - jest to serwer, który pomaga zarządzać konfiguracją mikroserwisów. <a href="https://codecouple.pl/2017/06/23/16-spring-boot-cloud-config/">link</a></p><br>
 		
 		<p>Zamiast tworzyć oddzielny plik konfiguracyjny dla kazdego mikroserwisu zawierający tę samą implementację wystaczy utworzyć oddzielny serwis 
-		(projekt) który będzie zawierał plik konfiguracyjny dostępny dla wszytskich serwisów i umieszczenie go np. na <b>GitHub.</b></p>
+		(projekt) który będzie zawierał adres (GIT-URL) do plików konfiguracyjnych umieszczonych na <b>GitHub</b> lub lokalnie na komputerze
+		pliki te moga być oodzielnym seriwsem lub po prostu luzem zapisane w folderze gdzies na pulpicie np 
+			<a href="https://www.youtube.com/watch?v=gb1i4WyWNK4&list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB&index=11">java brains</a></p><br>
 		
+		<script src="https://pastebin.com/embed_js/3dJWKZWN"></script><br>
+		<ul>
+		<li>Aby dodac serwis konfiguracyjny  należy utworzyć nowy projekt z zależnością <b>spring-cloud-config-server</b>.</li>
+		<li>Następnie do klasy main dodoać adnotację: <b>@EnableConfigServer</b> </li>
+		<li>Dodać wpis do application.properties</li>
+		</ul>
+		<script src="https://pastebin.com/embed_js/J6KG43aJ"></script><br>
+		
+		<p>teraz w serswisie klienta należy dodać zalezność <b>spring-cloud-config-client</b> </p>
+		<p>Utworzyć plik <b>boostrap.properties</b> i dodac wpis:</p>
+		<script src="https://pastebin.com/embed_js/C5iwDv1t"></script><br>
+		<p>Teraz należy utworzyć plik konfiguracyjny dla danego serowisu którego nazwa będzie taka sama jak nazwa serwisu np: <b>castle-service.properties</b>. dzięki temu spring 
+		będzie wiedział który plik konfiguracyjny jest do którego serwisu.</p>
+		<p>Ewentualnie nazwa pliku konfiguracyjnego może zawierać nazwę <b>profilu</b> np <b>castle-service-production</b> i wtedy wskazać podczas uruchamiania w IntelliJ 
+		<b>-Dspring.profiles.active=production.</b></p>
+		<p>Pliki konfiguracyjne mogą być umieszczone zarówno na Githubie jak i lokalanie</p>
     </div>
 
     <div class="clear"></div>
